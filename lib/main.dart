@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:todo_frontend/router.dart';
@@ -11,7 +12,6 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       // TODO: add your application's localizations delegates.
       localizationsDelegates: const [],
       builder: (ctx, child) {
-        print(ctx);
+        if (kDebugMode) {
+          print(ctx);
+        }
         return MaterialApp(home: child!);
       },
       routerConfig: goRouter,
