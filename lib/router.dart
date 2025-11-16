@@ -1,6 +1,7 @@
 import 'package:flutter/widgets.dart';
 import 'package:go_router/go_router.dart';
-import 'package:messless/screens/home.dart';
+import 'package:todo_frontend/screens/home.dart';
+import 'package:todo_frontend/widgets/scaffold_with_navbar.dart';
 
 enum RouterDestinations {
   home(url: '/'),
@@ -28,30 +29,11 @@ final goRouter = GoRouter(
       },
       routes: [
         GoRoute(
-          path: RouterDestinations.login.url,
-          name: "Anmelden",
-          builder: (context, state) => LoginScreen(),
-        ),
-        GoRoute(
           path: RouterDestinations.home.url,
           name: "Die Hugos",
           builder: (context, state) => HomeScreen(),
         ),
-        //    GoRoute(
-        //      path: RouterDestinations.cashpoolOverview.url,
-        //      name: "Gruppenkassen",
-        //      builder: (context, state) => CashpoolOverviewScreen(),
-        //    ),
-        //    GoRoute(
-        //      path: RouterDestinations.cashpoolCreate.url,
-        //      name: "Gruppenkassa erstellen",
-        //      builder: (context, state) => CashpoolCreateScreen(),
-        //    ),
-        //    GoRoute(
-        //      path: RouterDestinations.cashpoolDetail.url,
-        //      name: "Gruppenkassa",
-        //      builder: (context, state) => CashpoolDetailScreen(),
-        //    ),
+
       ],
     ),
   ],
