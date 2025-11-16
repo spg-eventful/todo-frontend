@@ -9,6 +9,7 @@ enum RouterDestinations {
   add(url: '/add');
 
   final String url;
+
   const RouterDestinations({required this.url});
 }
 
@@ -34,7 +35,12 @@ final goRouter = GoRouter(
           name: "list",
           builder: (context, state) => HomeScreen(),
         ),
-
+        GoRoute
+          (
+          path: RouterDestinations.add.url,
+          name: "add",
+          builder: (context, state) => AddNewListEntryScreen(),
+        ),
       ],
     ),
   ],
